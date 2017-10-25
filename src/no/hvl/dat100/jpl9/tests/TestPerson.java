@@ -8,30 +8,35 @@ public class TestPerson {
 
 	@Test
 	public void testConstructor() {
-		TPerson person = new TPerson("Olsen", "Ole", 6);
+	
+		long fnummer = 10069418300L;
+		
+		TPerson person = new TPerson("Olsen", "Ole", fnummer);
 		
 		assertEquals(person.getEtternamn(),"Olsen");
 		assertEquals(person.getFornamn(),"Ole");
-		assertEquals(person.getFodselsnummer(),6);
+		assertEquals(person.getFodselsnummer(),fnummer);
 	}
 
 	@Test
 	public void testSet() {
 		TPerson person = new TPerson();
-		
+		long fnummer = 10069418300L;
 		
 		person.setEtternamn("Olsen");
 		person.setFornamn("Ole");
-		person.setFodselsnummer(6);
+		person.setFodselsnummer(fnummer);
 		
 		assertEquals(person.getEtternamn(),"Olsen");
 		assertEquals(person.getFornamn(),"Ole");
-		assertEquals(person.getFodselsnummer(),6);
+		assertEquals(person.getFodselsnummer(),fnummer);
 	}
 	
 	@Test
 	public void testKjonn1() {
-		TPerson person = new TPerson("Olsen", "Ole", 6);
+		long fnummer = 10069418300L;
+		
+		TPerson person = new TPerson("Olsen", "Ole", fnummer);
 		
 		assertTrue(person.erMann());
 		assertFalse(person.erKvinne());
@@ -39,7 +44,9 @@ public class TestPerson {
 	
 	@Test
 	public void testKjonn2() {
-		TPerson person = new TPerson("Olsen", "Oline", 7);
+		long fnummer = 10069418200L;
+		
+		TPerson person = new TPerson("Olsen", "Oline", fnummer);
 		
 		assertFalse(person.erMann());
 		assertTrue(person.erKvinne());
@@ -47,9 +54,9 @@ public class TestPerson {
 	
 	@Test
 	public void testerLik() {
-		TPerson person1 = new TPerson("Olsen", "Oline", 7);
-		TPerson person2 = new TPerson("Olsen", "Oline", 7);
-		TPerson person3 = new TPerson("Olsen", "Oline", 8);
+		TPerson person1 = new TPerson("Olsen", "Oline", 8);
+		TPerson person2 = new TPerson("Olsen", "Oline", 8);
+		TPerson person3 = new TPerson("Olsen", "Oline", 7);
 		
 		assertFalse(person1.erLik(person3));
 		assertTrue(person1.erLik(person2));
