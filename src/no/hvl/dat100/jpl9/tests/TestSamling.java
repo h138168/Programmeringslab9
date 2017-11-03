@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import no.hvl.dat100.jpl9.*;
 public class TestSamling {
+	
+	
 
 	@Test
 	public void testStandardConstructor() {
