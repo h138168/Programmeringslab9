@@ -76,19 +76,27 @@ public class PersonSamling {
 
 	public String toString() {
 		// TODO
-		return antall + "\n" + Student.class.toString() + "\n" + Laerer.class.toString();
+		int t = this.tabell.length;
+		String s = getAntall() + "\n";
+		for (int i = 0; i < t; i++) {
+			if(this.tabell[i] != null)
+				s = s + this.tabell[i];
+			else
+				i = t - 1;
+		}
+		return s;
 		//throw new RuntimeException("not implemented");
 	}
 
 	public void utvid() {
 		// TODO
-		Person[] tabell2 = new Person[tabell.length*2];
-		for(int i = 0; i < tabell.length; i++)
+		int l = this.tabell.length * 2;
+		PersonSamling ny = new PersonSamling(l);
+		for (int i = 0; i < getAntall(); i++)
 		{
-			tabell2[i] = tabell[i];
+			ny.tabell[i] = this.tabell[i];
 		}
-		antall = tabell.length;
-		ledigPlass();
+		this.tabell = ny.tabell;
 		//throw new RuntimeException("not implemented");
 	}
 

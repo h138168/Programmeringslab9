@@ -3,6 +3,8 @@ package no.hvl.dat100.jpl9;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -14,15 +16,21 @@ public class Filer {
 	private static String STUDENT = "STUDENT";
 	private static String LAERER = "LAERER";
 
-	public boolean skriv(PersonSamling samling, String filnavn) {
+	public boolean skriv(PersonSamling samling, String filnavn) throws Exception {
 
 		boolean skrevet = true;
-		PrintWriter writer = null;
 
 		// TODO
 		
-		throw new RuntimeException("not implemented");
-
+		FileWriter skrivelink = new FileWriter(new File(filnavn));
+		PrintWriter skriver = new PrintWriter(skrivelink);
+		
+		skriver.print(samling.toString());
+		
+		
+		//throw new RuntimeException("not implemented");
+		skriver.close();
+		return skrevet;
 	}
 
 	public PersonSamling les(String filnavn) {
@@ -30,6 +38,7 @@ public class Filer {
 		PersonSamling samling = null;
 
 		// TODO
+		
 		throw new RuntimeException("not implemented");
 	}
 }

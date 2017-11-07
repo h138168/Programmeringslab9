@@ -10,7 +10,7 @@ public class TestFiler {
 	private static String FILNAVN = "personer.dat";
 	
 	@Test
-	public void testskriv() {
+	public void testskriv() throws Exception {
 		Filer filer = new Filer();
 		
 		Student student = new Student("Olsen", "Ole", 7,100,"1A");
