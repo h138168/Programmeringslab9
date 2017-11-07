@@ -30,10 +30,18 @@ public class Filer {
 		
 		//throw new RuntimeException("not implemented");
 		skriver.close();
-		return skrevet;
+		
+		if(skrevet)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
-	public PersonSamling les(String filnavn) {
+	public PersonSamling les(String filnavn) throws Exception {
 
 		PersonSamling samling = null;
 

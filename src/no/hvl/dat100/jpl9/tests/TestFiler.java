@@ -25,7 +25,7 @@ public class TestFiler {
 	}
 
 	@Test
-	public void testles() {
+	public void testles() throws Exception {
 		Filer filer = new Filer();
 		
 		PersonSamling samling = filer.les(FILNAVN);
